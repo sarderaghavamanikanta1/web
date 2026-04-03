@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto+Mono:wght@300;400;600&display=swap');
+
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --accent: #e63946;
+  /* Blood Red */
+  --border: #eeeeee;
+  --shadow: rgba(230, 57, 70, 0.1);
+  --header-height: 100px;
+  /* Even bigger header */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  font-size: 1.25rem;
+  /* Extra large base font for visibility */
+}
+
+/* --- NAVIGATION --- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 2px solid var(--border);
+  /* Slightly more bold border */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+}
+
+.logo {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 800;
+  font-size: 2.2rem;
+  /* Massive logo */
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 1.2rem;
+  /* Bigger nav links */
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* --- PRODUCT GRID --- */
+.product-grid {
+  display: grid;
+  /* Fixed: Use min() to prevent overflow on mobile while keeping massive desktop size */
+  grid-template-columns: repeat(auto-fill, minmax(min(450px, 100%), 1fr));
+  gap: 4rem;
+  padding: calc(var(--header-height) + 6rem) 5% 10rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.pill-card {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 3.5rem;
+  /* Spacious interior */
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.pill-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-15px);
+  box-shadow: 0 35px 70px var(--shadow);
+}
+
+.pill-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  margin-bottom: 3rem;
+  transition: transform 0.5s ease;
+}
+
+.pill-card:hover img {
+  transform: scale(1.05);
+}
+
+.pill-card h3 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8rem;
+  /* Extra bold headings */
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.pill-card p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.footer-logo {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+/* --- DETAIL PAGE --- */
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  min-height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
+  gap: 8rem;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: start;
+}
+
+.detail-image img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  padding: 3rem;
+  background: #fdfdfd;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
+}
+
+.detail-content h1 {
+  font-size: 6rem;
+  /* Massive hero title */
+  font-weight: 800;
+  letter-spacing: -6px;
+  line-height: 0.85;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-size: 3.5rem;
+  /* Hyper-large price */
+  color: var(--accent);
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.description {
+  font-size: 1.5rem;
+  /* Bold description */
+  margin-bottom: 6rem;
+  color: #333;
+  border-left: 8px solid var(--accent);
+  padding-left: 3rem;
+  line-height: 2;
+}
+
+.buy-now-btn {
+  background: var(--accent);
+  color: white;
+  padding: 2rem 6rem;
+  /* Massive impactful button */
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.buy-now-btn:hover {
+  background: #000;
+  transform: scale(1.08);
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #bbb;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 3rem;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 1200px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding-top: 5%;
+  }
+
+  .detail-content h1 {
+    font-size: 4rem;
+    letter-spacing: -2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .detail-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .price {
+    font-size: 2.2rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 10rem 5%;
+  text-align: center;
+  background: #fafafa;
+}

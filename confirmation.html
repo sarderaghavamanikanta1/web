@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDER CONFIRMED // CLINIC_X01</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .conf-container {
+            min-height: calc(100vh - var(--header-height));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10% 8% 15%;
+            margin-top: var(--header-height);
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .status-badge {
+            background: var(--accent);
+            color: white;
+            padding: 1.5rem 3rem; /* Extra large badge */
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            letter-spacing: 3px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 8rem; /* Massive massive title */
+            font-weight: 800;
+            margin-bottom: 2rem;
+            letter-spacing: -8px;
+            line-height: 0.8;
+            color: var(--fg);
+        }
+
+        .order-id {
+            color: #999;
+            font-family: 'Roboto Mono', monospace;
+            margin-bottom: 5rem;
+            font-size: 2rem; /* Big order tracking number */
+            letter-spacing: 5px;
+        }
+
+        .check-mark {
+            font-size: 10rem; /* Huge check mark */
+            color: var(--accent);
+            margin-bottom: 3rem;
+            line-height: 1;
+        }
+
+        .conf-desc {
+            max-width: 900px;
+            font-size: 1.6rem;
+            color: #444;
+            margin-bottom: 6rem;
+            line-height: 1.8;
+            border-left: 10px solid var(--accent);
+            padding-left: 3rem;
+            text-align: left;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 4rem; letter-spacing: -3px; }
+            .check-mark { font-size: 6rem; }
+            .conf-desc { font-size: 1.2rem; text-align: center; padding-left: 0; border-left: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scaled Navigation Bar -->
+    <nav>
+        <div class="logo">CLINIC_X01</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Market</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Wallet</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+        <div class="logo">ID:44x77z</div>
+    </nav>
+
+    <main class="conf-container">
+        <div class="check-mark">✓</div>
+        <div class="status-badge">PAYMENT_RECEIVED_CONFIRMED</div>
+        <h1>ORDER<br>SUCCESS</h1>
+        <p class="order-id">ORD-TX-9921-X</p>
+        
+        <p class="conf-desc">
+            Your pharmacological order has been successfully queued for <strong>STEALTH DISPATCH</strong>. 
+            Tracking details will be permanently archived and available on your encrypted dashboard within 4 hours. 
+            All shipping manifests are clinical-grade purged. Secure delivery is prioritized.
+        </p>
+        
+        <a href="index.html" class="buy-now-btn" style="text-decoration: none;">Return to Vault</a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">CLINIC_X01 // CLASSIFIED CONTENT</div>
+        <p style="font-size: 0.9rem; color: #ccc;">© 2026 INTERNAL USE ONLY. ALL LOGS DELETED ON EXIT.</p>
+    </footer>
+
+</body>
+</html>
