@@ -3,12 +3,16 @@
 :root {
   --bg: #ffffff;
   --fg: #1a1a1a;
-  --accent: #e63946;
-  /* Blood Red */
+  --accent: #e63946; /* Blood Red */
   --border: #eeeeee;
   --shadow: rgba(230, 57, 70, 0.1);
   --header-height: 100px;
-  /* Even bigger header */
+}
+
+@media (max-width: 600px) {
+  :root {
+    --header-height: 70px;
+  }
 }
 
 * {
@@ -22,8 +26,13 @@ body {
   color: var(--fg);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  font-size: 1.25rem;
-  /* Extra large base font for visibility */
+  font-size: 1.1rem; /* Slightly smaller base font for consistency */
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem;
+  }
 }
 
 /* --- NAVIGATION --- */
@@ -46,11 +55,26 @@ nav {
 .logo {
   font-family: 'Roboto Mono', monospace;
   font-weight: 800;
-  font-size: 2.2rem;
-  /* Massive logo */
+  font-size: 2rem;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: -2px;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    font-size: 1.3rem;
+    letter-spacing: -1px;
+  }
+  .nav-links {
+    gap: 1.5rem !important;
+  }
+  .nav-links a {
+    font-size: 0.8rem !important;
+  }
+  nav {
+    padding: 0 3%;
+  }
 }
 
 .nav-links {
@@ -224,7 +248,7 @@ nav {
   .detail-container {
     grid-template-columns: 1fr;
     gap: 5rem;
-    padding-top: 5%;
+    padding: 10% 5%;
   }
 
   .detail-content h1 {
@@ -233,26 +257,61 @@ nav {
   }
 }
 
-@media (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
-
-  .logo {
-    font-size: 1.5rem;
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: calc(var(--header-height) + 3rem) 5% 5rem;
   }
 
   .detail-content h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
+    letter-spacing: -1px;
   }
 
   .price {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  .description {
+    font-size: 1.2rem;
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .buy-now-btn {
+    padding: 1.5rem 3rem;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav .logo:last-child {
+    display: none; /* Hide ID on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+  .nav-links {
+    gap: 1rem !important;
+  }
+  .nav-links a {
+    font-size: 0.7rem !important;
+  }
+  .pill-card {
+    padding: 2rem;
+  }
+  .pill-card h3 {
+    font-size: 1.4rem;
+  }
+  .detail-content h1 {
+    font-size: 2.2rem;
+  }
+  .price {
+    font-size: 1.8rem;
   }
 }
 
@@ -261,4 +320,10 @@ footer {
   padding: 10rem 5%;
   text-align: center;
   background: #fafafa;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 4rem 5%;
+  }
 }
